@@ -1,17 +1,17 @@
 package com.switcheese.server.domain.switcheese;
 
+import com.switcheese.server.domain.common.BaseEntity;
 import com.switcheese.server.domain.member.Member;
 import com.switcheese.server.domain.switcheese.Switch;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Entity
 @Table(name = "wish")
-public class Wish {
+public class Wish extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,5 @@ public class Wish {
     private Switch switchEntity;
 
     private Boolean isDelete;
-
-    private LocalDateTime createdAt;
 }
 

@@ -1,16 +1,16 @@
 package com.switcheese.server.domain.switcheese;
 
+import com.switcheese.server.domain.common.BaseEntity;
 import com.switcheese.server.domain.member.Member;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Entity
 @Table(name = "switch")
-public class Switch {
+public class Switch extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,10 +35,6 @@ public class Switch {
     private Long commentCount;
 
     private Boolean isDelete;
-
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updateAt;
 
     private String img;
 

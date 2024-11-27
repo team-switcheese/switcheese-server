@@ -2,16 +2,16 @@ package com.switcheese.server.domain.comment;
 
 import com.switcheese.server.domain.member.Member;
 import com.switcheese.server.domain.switcheese.Switch;
+import com.switcheese.server.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Entity
 @Table(name = "comment")
-public class Comment {
+public class Comment extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +32,4 @@ public class Comment {
     private Integer dislikeCount;
 
     private Boolean isDelete;
-
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
 }

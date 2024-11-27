@@ -1,16 +1,19 @@
 package com.switcheese.server.domain.member;
 
-import jakarta.persistence.*;
+import com.switcheese.server.domain.common.BaseEntity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @NoArgsConstructor
-@Data
+@Data // stter 지양
 @Entity
 @Table(name = "member")
-public class Member {
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +28,4 @@ public class Member {
     private String role;
 
     private Boolean isDelete;
-
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
 }

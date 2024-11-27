@@ -1,6 +1,6 @@
 package com.switcheese.server.domain.switcheese;
 
-
+import com.switcheese.server.domain.common.BaseEntity;
 import com.switcheese.server.domain.member.Member;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "switch_like")
-public class SwitchLike {
+public class SwitchLike extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

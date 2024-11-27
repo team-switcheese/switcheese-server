@@ -1,16 +1,16 @@
 package com.switcheese.server.domain.comment;
 
 import com.switcheese.server.domain.member.Member;
+import com.switcheese.server.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Entity
 @Table(name = "comment_reaction")
-public class CommentReaction {
+public class CommentReaction extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +27,4 @@ public class CommentReaction {
     private String likeType;
 
     private Boolean isDelete;
-
-    private LocalDateTime createdAt;
 }
