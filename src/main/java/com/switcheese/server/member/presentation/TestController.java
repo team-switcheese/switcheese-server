@@ -1,8 +1,7 @@
 package com.switcheese.server.member.presentation;
 
+import com.switcheese.server.common.response.ApiResponse;
 import com.switcheese.server.member.application.TestQueryService;
-import com.switcheese.server.member.presentation.dto.MemberResponse;
-import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +15,8 @@ public class TestController {
   }
 
   @GetMapping("/test")
-  public List<MemberResponse> test() {
-    return testQueryService.test();
+  public ApiResponse<Void> test() {
+    return ApiResponse.ok();
   }
 
 }
