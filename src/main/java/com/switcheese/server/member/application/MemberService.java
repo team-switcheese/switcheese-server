@@ -4,7 +4,10 @@ import static com.switcheese.server.common.exception.SampleErrorCode.NOT_FOUND_U
 
 import com.switcheese.server.common.exception.NoSuchMemberException;
 import com.switcheese.server.member.domain.MemberRepository;
+import com.switcheese.server.member.presentation.dto.MemberListResponse;
 import com.switcheese.server.member.presentation.dto.MemberModifyRequest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,6 +33,11 @@ public class MemberService {
     memberRepository.findById(memberId)
         .orElseThrow(() -> new NoSuchMemberException(NOT_FOUND_USER))
         .modify(request);
+  }
+
+  public Page<MemberListResponse> memberList(Pageable request) {
+    return memberRepository.findAll(request)
+        .map(MemberListResponse::of);
   }
 
 }
