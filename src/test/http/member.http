@@ -10,3 +10,6 @@ Content-Type: application/json
 {
   "nickname": "newNickname"
 }
+
+### 리스트 조회 api
+GET {{url}}/member?page=0&size=2
