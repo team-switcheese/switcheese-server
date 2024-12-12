@@ -1,3 +1,7 @@
 ### 찜 api
 POST {{url}}/wish?switchId=1&active=false
 memberId:1
+
+### 멤버별 위시 리스트 조회 api
+GET {{url}}/wish/wish-list?page=2&size=2
+memberId:1
