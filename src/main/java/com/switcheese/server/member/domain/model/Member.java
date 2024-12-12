@@ -1,6 +1,7 @@
 package com.switcheese.server.member.domain.model;
 
 import com.switcheese.server.config.BaseEntity;
+import com.switcheese.server.member.presentation.dto.MemberModifyRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,6 +35,10 @@ public class Member extends BaseEntity {
 
   public void resign() {
     this.isDelete = true;
+  }
+
+  public void modify(MemberModifyRequest request) {
+    this.nickname = request.nickname();
   }
 
 }

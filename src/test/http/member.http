@@ -1,3 +1,12 @@
 ### 탈퇴 api
 DELETE {{url}}/member/resign
 memberId:1
+
+### 수정 api
+PATCH {{url}}/member
+memberId:1
+Content-Type: application/json
+
+{
+  "nickname": "newNickname"
+}

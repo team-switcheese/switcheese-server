@@ -4,6 +4,7 @@ import static com.switcheese.server.common.exception.SampleErrorCode.NOT_FOUND_U
 
 import com.switcheese.server.common.exception.NoSuchMemberException;
 import com.switcheese.server.member.domain.MemberRepository;
+import com.switcheese.server.member.presentation.dto.MemberModifyRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +23,13 @@ public class MemberService {
         .orElseThrow(() -> new NoSuchMemberException(NOT_FOUND_USER))
         .resign();
     //TODO 소셜로그인 탈퇴 로직 추가
+  }
+
+  @Transactional
+  public void modifyMember(MemberModifyRequest request, Long memberId) {
+    memberRepository.findById(memberId)
+        .orElseThrow(() -> new NoSuchMemberException(NOT_FOUND_USER))
+        .modify(request);
   }
 
 }
