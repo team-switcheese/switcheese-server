@@ -1,0 +1,3 @@
+### 찜 api
+POST {{url}}/wish?switchId=1&active=false
+memberId:1

@@ -5,11 +5,12 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 public enum SampleErrorCode {
-  NOT_FOUND_USER(HttpStatus.NOT_FOUND, "사용자를 찾을 수 없습니다. : [%s]");
+  NOT_FOUND_USER(HttpStatus.NOT_FOUND, "사용자를 찾을 수 없습니다. : [%s]"),
+  NOT_FOUND_KEYBOARD_SWITCH(HttpStatus.NOT_FOUND, "스위치를 찾을 수 없습니다. [%s]");
 
   private final HttpStatus status;
   private final String message;
-  
+
   SampleErrorCode(HttpStatus status, String message) {
     this.status = status;
     this.message = message;

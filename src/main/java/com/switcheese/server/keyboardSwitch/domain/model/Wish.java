@@ -34,6 +34,16 @@ public class Wish extends BaseEntity {
   @JoinColumn(name = "switch_id", nullable = false)
   private KeyboardSwitch keyboardSwitch;
 
-  private Boolean isDelete;
+  private Boolean isActive;
+
+  public Wish(Member member, KeyboardSwitch keyboardSwitch, Boolean isActive) {
+    this.member = member;
+    this.keyboardSwitch = keyboardSwitch;
+    this.isActive = isActive;
+  }
+
+  public void turnActive(Boolean isActive) {
+    this.isActive = isActive;
+  }
 
 }
