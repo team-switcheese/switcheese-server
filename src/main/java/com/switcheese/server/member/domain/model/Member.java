@@ -32,4 +32,8 @@ public class Member extends BaseEntity {
 
   private Boolean isDelete;
 
+  public void resign() {
+    this.isDelete = true;
+  }
+
 }
